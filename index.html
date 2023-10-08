@@ -10,29 +10,48 @@
 <body>
     <header>
         <h1>Coding Quiz Challenge</h1>
-        <!-- add timer here -->
         <!-- add 'view highscores' button? here -->
+        <h2 class="timer"></h2>
     </header>
 
     <main>
-        <section>
-            <h2>Welcome to the Coding Quiz Challenge!</h2>
-            <!-- add p element with rules -->
-            <!-- add start button -->
-        </section>
+        <div class="startup">
+            <header>
+                <h2>Welcome to the Coding Quiz Challenge!</h2>
+            </header>
 
+            <section>
+                <!-- add p element with rules -->
+            </section>
 
-    <!-- <p>Choose your favorite Web language:</p> -->
+            <footer>
+                <button class="start-btn">Start Game</button>
+            </footer>
+        </div>
 
-    <!-- <form>
-        <input type="radio" id="html" name="fav_language" value="HTML">
-        <label for="html">HTML</label><br>
-        <input type="radio" id="css" name="fav_language" value="CSS">
-        <label for="css">CSS</label><br>
-        <input type="radio" id="javascript" name="fav_language" value="JavaScript">
-        <label for="javascript">JavaScript</label>
-    </form> -->
+        <div class="hide" id="quiz-box">
+            <header>
+                <div class="question-text">
+                    <!-- Here I've inserted question from JavaScript -->
+                </div>
+            </header>
 
+            <section>
+                <div class="option-list">
+                    <!-- Here I've inserted options from JavaScript -->
+                </div>
+            </section>
+
+            <footer>
+                <div class="feedback">
+                    <!-- Here I've inserted whether or not the question was answered correctly -->
+                </div>
+            </footer>
+        </div>
     </main>
+
+    <script src="./assets/js/highscore.js"></script>
+
+    <script src="./assets/js/script.js"></script>
 </body>
 </html>
