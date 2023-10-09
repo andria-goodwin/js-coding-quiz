@@ -65,6 +65,11 @@ var timerEl = document.querySelector('.timer');
 var quizBoxEl = document.querySelector("#quiz-box");
 var optionsEl = document.querySelector(".option-list"); 
 var feedbackEl = document.querySelector(".feedback");
+var startScreenEl = document.querySelector(".startup");
+var endScreenEl = document.querySelector("#end");
+var initialsEl = document.querySelector("#initials");
+var submitBtnEl = document.querySelector("#submit-btn");
+var finalScoreEl = document.querySelector("#final-score");
 
 var currentQuestionIndex = 0;
 var time = 90;
@@ -125,18 +130,39 @@ function optionsClick() {
     } 
 } 
 
+function submitScore() {
+	var initials = initialsEl.value.trim();
+	if (initials !== "") {
+		var highscores = 
+		JSON.parse(window.localStorage.getItem("highscores")) || [];
+
+		var newHighscore = {
+			score: time,
+			initials: initials,
+		};
+		highscores.push(newHighscore);
+		window.localStorage.setItem("highscores", JSON.stringify(highscores));
+	}
+}
+
 function endQuiz() {
     var score = time;
-    alert("Game Over! You scored " + score + ".");
+    // alert("Game Over! You scored " + score + ".");
     clearInterval(timeInterval);
-    
+    endScreenEl.removeAttribute("class");
+	quizBoxEl.setAttribute("class", "hide");
+	finalScoreEl.textContent = score;
 }
 
 
 function startGame() {
+	startScreenEl.setAttribute("class", "hide");
+	quizBoxEl.removeAttribute("class");
     showTimer();
     showQuestions();
 }
 
 // Add event listener to generate button
 startBtnEl.addEventListener("click", startGame);
+
+submitBtnEl.addEventListener("click", submitScore);

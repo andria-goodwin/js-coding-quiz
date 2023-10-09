@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coding Quiz</title>
+
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
@@ -45,6 +47,29 @@
             <footer>
                 <div class="feedback">
                     <!-- Here I've inserted whether or not the question was answered correctly -->
+                </div>
+            </footer>
+        </div>
+
+        <div class="hide" id="end">
+            <header>
+                <div class="game-over">
+                    <p>Your final score is <span id="final-score"></span> .</p>
+                    <!-- Here I've inserted Game Over screen with score -->
+                </div>
+            </header>
+
+            <section>
+                <div class="initial-input">
+                    Enter initials: <input type="text" id="initials" max="3">
+                    <!-- Here will be where the player can input their initials -->
+                </div>
+            </section>
+
+            <footer>
+                <div class="submit">
+                    <button id="submit-btn">Submit</button>
+                    <!-- Here is where the player can submit their score to the view highscores list -->
                 </div>
             </footer>
         </div>
