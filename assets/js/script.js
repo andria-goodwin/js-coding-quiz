@@ -1,8 +1,6 @@
 var questions = [ 
 	{ 
-		prompt: `Inside which HTML 
-				element do we put 
-				the JavaScript?`, 
+		prompt: "Inside which HTML element do we put the JavaScript?", 
 		options: [ 
 			"<javascript>", 
 			"<js>", 
@@ -13,50 +11,47 @@ var questions = [
 	}, 
 
 	{ 
-		prompt: `How do you call a 
-				function named 
-				myFunction?`, 
+		prompt: "How do you write 'Hello World' in an alert in JavaScript?", 
 		options: [ 
+			"alert('Hello World')", 
+			"msgBox('Hello World')", 
+			"alertBox='Hello World'", 
+			"alertBox('Hello World')", 
+		], 
+		answer: "alert('Hello World')", 
+	}, 
+
+	{ 
+		prompt: "How do you create a function in JavaScript?", 
+		options: [ 
+			"function:myFunction()", 
+			"function=myFunction()", 
+			"function myFunction()", 
+			"myFunction():function", 
+		], 
+		answer: "function myFunction()", 
+	}, 
+
+	{ 
+		prompt: "How do you call a function named 'myFunction'?", 
+		options: [
 			"call myFunction()", 
 			"myFunction()", 
 			"call function myFunction", 
-			"Call.myFunction", 
+			"Call.myFunction()"
 		], 
 		answer: "myFunction()", 
 	}, 
 
 	{ 
-		prompt: `How does a for loop 
-				start?`, 
+		prompt: "How can you add a comment in JavaScript?", 
 		options: [ 
-			"for (i = 0; i <= 5; i++)", 
-			"for (i = 0; i <= 5)", 
-			"for i = 1 to 5", 
-			" for (i <= 5; i++)", 
+			"// comment here", 
+			"'comment here", 
+			"<!-- comment here -->", 
+			"# comment here", 
 		], 
-		answer: "for (i = 0; i <= 5; i++)", 
-	}, 
-
-	{ 
-		prompt: `In JavaScript, which 
-				of the following is 
-				a logical operator?`, 
-		options: ["|", "&&", "%", "/"], 
-		answer: "&&", 
-	}, 
-
-	{ 
-		prompt: `A named element in a 
-				JavaScript program that 
-				is used to store and 
-				retrieve data is a _____.`, 
-		options: [ 
-			"method", 
-			"assignment operator", 
-			"letiable", 
-			"string", 
-		], 
-		answer: "letiable", 
+		answer: "// comment here", 
 	}, 
 ]; 
 
@@ -65,7 +60,7 @@ var timerEl = document.querySelector('.timer');
 var quizBoxEl = document.querySelector("#quiz-box");
 var optionsEl = document.querySelector(".option-list"); 
 var feedbackEl = document.querySelector(".feedback");
-var startScreenEl = document.querySelector(".startup");
+var startScreenEl = document.querySelector("#startup");
 var endScreenEl = document.querySelector("#end");
 var initialsEl = document.querySelector("#initials");
 var submitBtnEl = document.querySelector("#submit-btn");
@@ -142,6 +137,7 @@ function submitScore() {
 		};
 		highscores.push(newHighscore);
 		window.localStorage.setItem("highscores", JSON.stringify(highscores));
+		window.location.href = "highscore.html";
 	}
 }
 

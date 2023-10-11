@@ -12,12 +12,14 @@
 <body>
     <header>
         <h1>Coding Quiz Challenge</h1>
-        <!-- add 'view highscores' button? here -->
+        <button id="view-scores">
+            <a href="highscore.html">View Highscores</a>
+        </button>
         <h2 class="timer"></h2>
     </header>
 
     <main>
-        <div class="startup">
+        <div class="container" id="startup">
             <header>
                 <h2>Welcome to the Coding Quiz Challenge!</h2>
             </header>
@@ -31,16 +33,16 @@
             </footer>
         </div>
 
-        <div class="hide" id="quiz-box">
+        <div class="container hide" id="quiz-box">
             <header>
                 <div class="question-text">
-                    <!-- Here I've inserted question from JavaScript -->
+                    <!-- Here I've inserted the question from JavaScript -->
                 </div>
             </header>
 
             <section>
                 <div class="option-list">
-                    <!-- Here I've inserted options from JavaScript -->
+                    <!-- Here I've inserted the answer options from JavaScript -->
                 </div>
             </section>
 
@@ -51,7 +53,7 @@
             </footer>
         </div>
 
-        <div class="hide" id="end">
+        <div class="container hide" id="end">
             <header>
                 <div class="game-over">
                     <p>Your final score is <span id="final-score"></span> .</p>
