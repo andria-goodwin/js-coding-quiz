@@ -25,7 +25,8 @@ function showHighscores() {
   }
   
   // runs function upon button "click" action
-  document.querySelector('#clear').onclick = clearHighscores;
+  var clearEl = document.getElementById("clear");
+  clearEl.addEventListener("click", clearHighscores)
   
   // runs function upon page load
   showHighscores();
