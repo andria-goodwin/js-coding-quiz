@@ -6,34 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coding Quiz</title>
 
+    <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
-    <header>
+    <header class="page-header">
         <h1>Coding Quiz Challenge</h1>
-        <button id="view-scores">
-            <a href="highscore.html">View Highscores</a>
-        </button>
-        <h2 class="timer"></h2>
+        <div>
+            <button id="view-scores">
+                <a href="highscore.html">View Highscores</a>
+            </button>
+            <h2 class="timer">Time: 90</h2>
+        </div>
     </header>
 
     <main>
-        <div class="container" id="startup">
+        <div id="startup">
             <header>
                 <h2>Welcome to the Coding Quiz Challenge!</h2>
             </header>
-
-            <section>
-                <!-- add p element with rules -->
-            </section>
 
             <footer>
                 <button class="start-btn">Start Game</button>
             </footer>
         </div>
 
-        <div class="container hide" id="quiz-box">
+        <div class="hide" id="quiz-box">
             <header>
                 <div class="question-text">
                     <!-- Here I've inserted the question from JavaScript -->
@@ -53,10 +52,10 @@
             </footer>
         </div>
 
-        <div class="container hide" id="end">
+        <div class="hide" id="end">
             <header>
                 <div class="game-over">
-                    <p>Your final score is <span id="final-score"></span> .</p>
+                    <p>Your final score is <span id="final-score"></span>.</p>
                     <!-- Here I've inserted Game Over screen with score -->
                 </div>
             </header>
@@ -76,8 +75,6 @@
             </footer>
         </div>
     </main>
-
-    <script src="./assets/js/highscore.js"></script>
 
     <script src="./assets/js/script.js"></script>
 </body>

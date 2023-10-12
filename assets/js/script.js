@@ -67,7 +67,7 @@ var submitBtnEl = document.querySelector("#submit-btn");
 var finalScoreEl = document.querySelector("#final-score");
 
 var currentQuestionIndex = 0;
-var time = 90;
+var time = 89;
 var timeInterval;
 
 function showTimer() {  
@@ -93,7 +93,7 @@ function showQuestions() {
 		function (choice, i) { 
 			var choiceBtn = document.createElement("button"); 
 			choiceBtn.setAttribute("value", choice); 
-			choiceBtn.textContent = i + 1 + ". " + choice; 
+			choiceBtn.textContent = choice; 
 			choiceBtn.onclick = optionsClick; 
 			optionsEl.appendChild(choiceBtn); 
 		} 
@@ -127,7 +127,10 @@ function optionsClick() {
 
 function submitScore() {
 	var initials = initialsEl.value.trim();
-	if (initials !== "") {
+	initials = initials.toUpperCase();
+	if (initials === "") {
+		alert("You must enter initials to save your score.")
+	} else {
 		var highscores = 
 		JSON.parse(window.localStorage.getItem("highscores")) || [];
 
