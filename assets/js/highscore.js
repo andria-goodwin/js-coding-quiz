@@ -8,7 +8,7 @@ function showHighscores() {
     });
   
     for (var i = 0; i < highscore.length; i += 1) {
-      // create li for each highscore
+      // create list item for each highscore
       var liEl = document.createElement('li');
       liEl.textContent = highscore[i].initials + ' - ' + highscore[i].score;
   
@@ -24,7 +24,7 @@ function showHighscores() {
     window.location.reload();
   }
   
-  // runs function upon button "click" action
+  // listens for click on clear highscores button
   var clearEl = document.getElementById("clear");
   clearEl.addEventListener("click", clearHighscores)
   
