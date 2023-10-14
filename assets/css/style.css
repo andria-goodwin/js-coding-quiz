@@ -68,8 +68,17 @@ header h1 {
 
 /* start screen styling */
 .start-btn {
-    margin-top: 5%;
+    margin-top: 2%;
     padding: 2.5%;
+}
+
+ul {
+    color: var(--dark);
+    margin-top: 2%;
+}
+
+ul li {
+    margin-top: 2%;
 }
 
 /* question screens styling */
