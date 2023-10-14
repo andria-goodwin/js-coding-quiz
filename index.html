@@ -15,6 +15,7 @@
 </head>
 
 <body>
+    <!-- page header with highscore button and timer -->
     <header class="page-header">
         <h1>Coding Quiz Challenge</h1>
         <div>
@@ -26,6 +27,7 @@
     </header>
 
     <main>
+        <!-- start screen with button to start quiz -->
         <div id="startup">
             <header>
                 <h2>Welcome to the Coding Quiz Challenge!</h2>
@@ -36,45 +38,48 @@
             </footer>
         </div>
 
+        <!-- question screens with options -->
         <div class="hide" id="quiz-box">
             <header>
                 <div class="question-text">
-                    <!-- Here I've inserted the question from JavaScript -->
+                    <!-- the question from JavaScript -->
                 </div>
             </header>
 
             <section>
                 <div class="option-list">
-                    <!-- Here I've inserted the answer options from JavaScript -->
+                    <!-- the answer options from JavaScript -->
                 </div>
             </section>
 
             <footer>
                 <div class="feedback">
-                    <!-- Here I've inserted whether or not the question was answered correctly -->
+                    <!-- whether or not the question was answered correctly -->
                 </div>
             </footer>
         </div>
 
+        <!-- game over screen -->
         <div class="hide" id="end">
             <header>
                 <div class="game-over">
+                    <h2 id="game-over">Game Over!</h2>
                     <p>Your final score is <span id="final-score"></span>.</p>
-                    <!-- Here I've inserted Game Over screen with score -->
+                    <!-- game over screen with score -->
                 </div>
             </header>
 
             <section>
                 <div class="initial-input">
                     Enter initials: <input type="text" id="initials" max="3">
-                    <!-- Here will be where the player can input their initials -->
+                    <!-- where the player can input their initials -->
                 </div>
             </section>
 
             <footer>
                 <div class="submit">
                     <button id="submit-btn">Submit</button>
-                    <!-- Here is where the player can submit their score to the view highscores list -->
+                    <!-- where the player can submit their score to the view highscores list -->
                 </div>
             </footer>
         </div>

@@ -1,3 +1,4 @@
+// array of question objects
 var questions = [ 
 	{ 
 		prompt: "Inside which HTML element do we put the JavaScript?", 
@@ -55,6 +56,7 @@ var questions = [
 	}, 
 ]; 
 
+// global variables from html defined
 var startBtnEl = document.querySelector(".start-btn");
 var timerEl = document.querySelector('.timer');
 var quizBoxEl = document.querySelector("#quiz-box");
@@ -66,10 +68,12 @@ var initialsEl = document.querySelector("#initials");
 var submitBtnEl = document.querySelector("#submit-btn");
 var finalScoreEl = document.querySelector("#final-score");
 
+// global variable defined
 var currentQuestionIndex = 0;
 var time = 89;
 var timeInterval;
 
+// timer to start when the "start quiz" button is clicked
 function showTimer() {  
     timeInterval = setInterval(function () {
       if (time > 1) {
@@ -80,7 +84,7 @@ function showTimer() {
         endQuiz();
       }
     }, 1000);
-  }
+}
 
 // Loop through array of questions and 
 // Answers and create list with buttons 
@@ -100,7 +104,9 @@ function showQuestions() {
 	); 
 } 
 
+// controls the behavior of the quiz when an option is clicked
 function optionsClick() { 
+	// provides feedback as to whether the selected option was correct or not
     if (this.value !== questions[currentQuestionIndex].answer) { 
     	time -= 10; 
     	if (time < 0) { 
@@ -117,14 +123,20 @@ function optionsClick() {
     setTimeout(function () { 
     	feedbackEl.setAttribute("class", "feedback hide"); 
     }, 2000); 
+
+	// sets the currentQuestionIndex +1
     currentQuestionIndex++; 
+
     if (currentQuestionIndex === questions.length) { 
+		// triggers the game over screen when questions run out
     	endQuiz(); 
     } else { 
+		// moves the quiz to the next question
     	showQuestions(); 
     } 
 } 
 
+// saves score and initials to local storage to be displayed on the highscores page
 function submitScore() {
 	var initials = initialsEl.value.trim();
 	initials = initials.toUpperCase();
@@ -144,24 +156,30 @@ function submitScore() {
 	}
 }
 
+// game over 
 function endQuiz() {
+	// makes the score the amount of time left
     var score = time;
-    // alert("Game Over! You scored " + score + ".");
+	// stops the timer
     clearInterval(timeInterval);
+	// hides the quizbox and shows the end screen
     endScreenEl.removeAttribute("class");
 	quizBoxEl.setAttribute("class", "hide");
+	// shows the player their score
 	finalScoreEl.textContent = score;
 }
 
 
 function startGame() {
+	// hides the start screen and shows quizbox
 	startScreenEl.setAttribute("class", "hide");
 	quizBoxEl.removeAttribute("class");
     showTimer();
     showQuestions();
 }
 
-// Add event listener to generate button
+// listens for click on the start button
 startBtnEl.addEventListener("click", startGame);
 
+// listens for click on the submit button
 submitBtnEl.addEventListener("click", submitScore);

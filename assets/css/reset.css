@@ -28,6 +28,7 @@
     font-family: inherit;
   }
 
+  /* gives the ordered list no styling */
   ol {
     list-style: none;
   }
